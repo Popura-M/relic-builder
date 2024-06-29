@@ -54,7 +54,7 @@ export default function Home() {
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "id": {idLc},<br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "rank": {rankLc},<br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "level": {levelLc},<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "promotion": {promotionLc},<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "promotion": {promotionLc}<br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              {`}`},<br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              "relics": {`[`}<br />
                   <RelicCoder />
