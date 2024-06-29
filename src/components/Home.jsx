@@ -8,7 +8,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
 import { useShallow } from "zustand/react/shallow";
 import RelicCoder from "./fragments/RelicCoder";
@@ -55,13 +55,12 @@ export default function Home() {
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "rank": {rankLc},<br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "level": {levelLc},<br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "promotion": {promotionLc}<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              {`}`},<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              "relics": {`[`}<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             {`}`},<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             "relics": {`[`}<br />
                   <RelicCoder />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              {`]`},<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              "use_technique": true<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             {`],`}<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             "use_technique": true<br />
                   <span style={{ userSelect: "none", fontSize: "1.5rem" }}>{`}`}<br /></span>
-                  
                 </div>
               </>
             }

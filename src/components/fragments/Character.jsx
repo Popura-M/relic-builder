@@ -142,17 +142,17 @@ export default function Character() {
             </div>
             {/* <div className="bg-slate-300 dark:bg-slate-800 px-3 py-1">
               /set avatar eidolon {id} {rank}
+            </div> */}
+            {/* {trace && <div className="bg-slate-300 dark:bg-slate-800 px-3 py-1">/set avatar max_trace {id}</div>} */}
+            <div>
+              <span>Energy: {Math.floor(energy / 1)}%</span>
+              <Slider className="cursor-pointer mt-1" defaultValue={[50]} max={100} min={0} step={5} onValueChange={(val) => setEnergy(val)} />
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox id="trace" onCheckedChange={(val) => setTrace(val)} defaultChecked={true} />
               <label htmlFor="trace" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                Max trace
+                Use technique?
               </label>
-            </div>
-            {trace && <div className="bg-slate-300 dark:bg-slate-800 px-3 py-1">/set avatar max_trace {id}</div>} */}
-            <div>
-              <span>Energy: {Math.floor(energy / 1)}%</span>
-              <Slider className="cursor-pointer mt-1" defaultValue={[50]} max={100} min={0} step={5} onValueChange={(val) => setEnergy(val)} />
             </div>
             <div className="bg-slate-300 dark:bg-slate-800 px-3 py-1">
               "name": "{name}", <br />

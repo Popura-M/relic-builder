@@ -12,7 +12,7 @@ export default function CreateRelic() {
     useShallow((state) => [
       state.relicHead,
       state.setRelicHead,
-      state.mainStatHead,
+      state.mainStatHead = "HP",
       state.setMainStatHead,
       state.sub,
       state.setSubStat,
@@ -30,7 +30,7 @@ export default function CreateRelic() {
     useShallow((state) => [
       state.relicHand,
       state.setRelicHand,
-      state.mainStatHand,
+      state.mainStatHand = "ATK",
       state.setMainStatHand,
       state.subHand,
       state.setSubStatHand,
@@ -139,7 +139,7 @@ export default function CreateRelic() {
           upgradePc={upgrade}
           relicPc={relicHead}
           setRelic={setRelicHead}
-          mainStat={"HP"}
+          mainStat={mainStatHeadd}
           setMainStat={setMainStatHead}
           random={randomSubHead}
           randomStep={randomStepHead}
@@ -161,7 +161,7 @@ export default function CreateRelic() {
           upgradePc={upgradeHand}
           relicPc={relicHand}
           setRelic={setRelicHand}
-          mainStat={"ATK"}
+          mainStat={mainStatHandd}
           setMainStat={setMainStatHand}
           random={randomSubHand}
           randomStep={randomStepHand}
