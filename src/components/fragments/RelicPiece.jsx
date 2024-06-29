@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
-export default function RelicPiece({ reset, relicMain, name, relicPc, setRelic, mainStat, setMainStat, upgradePc, random, randomStep, children }) {
+export default function RelicPiece({ reset, relicMain, name, relicPc, setRelic, mainStat, setMainStat, upgradePc, random, randomStep, children, setAll = null }) {
   return (
     <div className="border-b py-5">
       <div className="flex items-center gap-5">
@@ -17,7 +17,12 @@ export default function RelicPiece({ reset, relicMain, name, relicPc, setRelic, 
       <div className="grid grid-cols-5">
         <div className="col-span-2">
           <p className="text-md">Relic Set</p>
-          <ComboboxRelic data={relic} name={"relic set"} value={relicPc} setValue={setRelic} />
+          <div className="flex items-center gap-1">
+            <ComboboxRelic data={relic} name={"relic set"} value={relicPc} setValue={setRelic} />
+            {setAll && <Button variant={"link"} onClick={setAll}>
+              Set to all
+            </Button>}
+          </div>
           <p>{relic.map((set) => (set.name === relicPc ? set.pc2 : null))}</p>
           <p>{relic.map((set) => (set.name === relicPc ? set.pc4 : null))}</p>
           <p className="pt-5">Select Main Stat</p>
@@ -48,32 +53,33 @@ function ComboboxRelic({ data, name, value, setValue }) {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button variant="outline" role="combobox" aria-expanded={open} className={`justify-between`}>
+          {value ? <img className="h-[25px] pr-1" src={`https://api.hakush.in/hsr/UI/itemfigures/${data.find((item) => item.name === value)?.id}.webp`} /> : ""}
           {value ? data.find((item) => item.name === value)?.name : `Select ${name}...`}
         </Button>
       </PopoverTrigger>
       <PopoverContent>
         <Command>
           <CommandInput placeholder={`Search ${name}...`} />
-          <CommandEmpty>No character found.</CommandEmpty>
+          <CommandEmpty>No relic found.</CommandEmpty>
           <CommandList>
             <CommandGroup>
-              {data.map(
-                (item) =>
-                  item.type === "relic" && (
-                    <CommandItem
-                      key={item.id}
-                      onSelect={(currentValue) => {
-                        setValue(currentValue === value ? value : currentValue);
-                        setOpen(false);
-                      }}
-                    >
-                      <div className="flex items-center gap-5">
-                        <img className="h-[50px]" src={`https://api.hakush.in/hsr/UI/itemfigures/${item.id}.webp`} alt={item.name} />
-                        <span className="text-lg">{item.name}</span>
-                      </div>
-                    </CommandItem>
-                  )
-              )}
+              {data
+                .filter((item) => item.type === "relic")
+                .sort((a, b) => b.id - a.id)
+                .map((item) => (
+                  <CommandItem
+                    key={item.id}
+                    onSelect={(currentValue) => {
+                      setValue(currentValue === value ? value : currentValue);
+                      setOpen(false);
+                    }}
+                  >
+                    <div className="flex items-center gap-5">
+                      <img className="h-[50px]" src={`https://api.hakush.in/hsr/UI/itemfigures/${item.id}.webp`} alt={item.name} />
+                      <span className="text-lg">{item.name}</span>
+                    </div>
+                  </CommandItem>
+                ))}
             </CommandGroup>
           </CommandList>
         </Command>

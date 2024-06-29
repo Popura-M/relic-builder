@@ -1,18 +1,12 @@
 import { create } from "zustand";
 
-export const useCharStore = create((set) => ({
+export const useLightconeStore = create((set) => ({
   id: "",
   setId: (id) => set({ id }),
-  name: "",
-  setName: (name) => set({ name }),
   level: 80,
   setLevel: (level) => set({ level }),
-  rank: 0,
+  rank: 1,
   setRank: (rank) => set({ rank }),
   promotion: 6,
   setPromotion: (promotion) => set({ promotion }),
-  trace: true,
-  setTrace: (trace) => set({ trace }),
-  energy: 50,
-  setEnergy: (energy) => set({ energy }),
 }));

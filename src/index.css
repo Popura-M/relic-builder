@@ -77,15 +77,15 @@
 
 @layer components {
   .five-star {
-    @apply from-lime-300 from-25% to-slate-900 bg-gradient-to-bl;
+    @apply from-yellow-600 from-25% to-slate-800 bg-gradient-to-bl;
   }
   .four-star {
-    @apply from-sky-400 from-25% to-slate-900 bg-gradient-to-bl;
+    @apply from-violet-500 from-25% to-slate-900 bg-gradient-to-bl;
   }
   .three-star {
-    @apply from-slate-400 from-25% to-slate-900 bg-gradient-to-bl;
+    @apply from-slate-600 from-25% to-slate-900 bg-gradient-to-bl;
   }
   .filter {
-    @apply w-12 rounded-md hover:bg-black/75 bg-black dark:hover:bg-white/15 cursor-pointer;
+    @apply w-12 rounded-md hover:bg-black/75 bg-slate-700 dark:hover:bg-white/15 cursor-pointer;
   }
 }

@@ -3,7 +3,7 @@ import { useShallow } from "zustand/react/shallow";
 import relic from "@/utils/dataRelic";
 import { mainStatBody, mainStatFeet, mainStatPlanar, mainStatLink, subStats } from "@/utils/dataStat";
 
-export default function Code({}) {
+export default function RelicCoder({ }) {
   const [relicHead, subHead] = useHeadStore(useShallow((state) => [state.relicHead, state.sub]));
 
   const [relicHand, subHand] = useHandStore(useShallow((state) => [state.relicHand, state.subHand]));
@@ -35,14 +35,14 @@ export default function Code({}) {
 
   return (
     (relicHead || relicHand || relicBody || relicFeet || relicPlanar || relicRope) && (
-      <div className="w-fit mx-auto mt-5 bg-slate-300 dark:bg-slate-800 px-3 py-1">
+      <span>
         <Relic name={relicHead} relic={getRelic(relicHead, 0).relicId} mainStat={getRelic(relicHead, 0).mainStatHeadId} sub={subHead} />
         <Relic name={relicHand} relic={getRelic(relicHand, 1).relicId} mainStat={getRelic(relicHand, 1).mainStatHandId} sub={subHand} />
         <Relic name={relicBody} relic={getRelic(relicBody, 2).relicId} mainStat={getRelic(relicBody, 2).mainStatBodyId} sub={subBody} />
         <Relic name={relicFeet} relic={getRelic(relicFeet, 3).relicId} mainStat={getRelic(relicFeet, 3).mainStatFeetId} sub={subFeet} />
         <Relic name={relicPlanar} relic={getRelic(relicPlanar, 0).relicId} mainStat={getRelic(relicPlanar, 0).mainStatPlanarId} sub={subPlanar} />
         <Relic name={relicRope} relic={getRelic(relicRope, 1).relicId} mainStat={getRelic(relicRope, 1).mainStatLinkId} sub={subRope} />
-      </div>
+      </span>
     )
   );
 }
@@ -52,7 +52,7 @@ function Relic({ name, relic, mainStat, sub }) {
     <div>
       {name && (
         <>
-          /give relic {relic} 15 {mainStat} {relic && sub.reduce((acc, curr) => (curr.stat !== "" ? acc + 1 : acc), 0)} {sub.map((val) => val.stat && `${subStats.find((sub) => sub.name === val.stat)?.id}:${val.step} `)}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "{relic},15,{mainStat},{relic && sub.reduce((acc, curr) => (curr.stat !== "" ? acc + 1 : acc), 0)}{sub.map((val) => val.stat && `,${subStats.find((sub) => sub.name === val.stat)?.id}:${val.step}`)}",
         </>
       )}
     </div>

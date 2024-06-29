@@ -1,11 +1,11 @@
 import { ThemeProvider } from "./components/theme-provider";
-import Character from "./components/fragments/Character";
+import Home from "./components/Home";
 
 function App() {
   return (
     <ThemeProvider>
       <div className="w-10/12 m-auto p-10">
-        <Character />
+        <Home />
       </div>
     </ThemeProvider>
   );
