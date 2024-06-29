@@ -52,7 +52,8 @@ function Relic({ name, relic, mainStat, sub }) {
     <div>
       {name && (
         <>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "{relic},15,{mainStat},{relic && sub.reduce((acc, curr) => (curr.stat !== "" ? acc + 1 : acc), 0)}{sub.map((val) => val.stat && `,${subStats.find((sub) => sub.name === val.stat)?.id}:${val.step}`)}",
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   "{relic},15,{mainStat},{relic && sub.reduce((acc, curr) => (curr.stat !== "" ? acc + 1 : acc), 0)}{sub.map((val) => val.stat && `,${subStats.find((sub) => sub.name === val.stat)?.id}:${val.step}`)}"
+          {String(relic).endsWith("6") ? "" : ","}
         </>
       )}
     </div>
