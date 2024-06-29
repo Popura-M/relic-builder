@@ -14,8 +14,8 @@ import { useShallow } from "zustand/react/shallow";
 import RelicCoder from "./fragments/RelicCoder";
 
 export default function Home() {
-  const [idChar, nameChar, rankChar, energy] = useCharStore(
-    useShallow((state) => [state.id, state.name, state.rank, state.energy])
+  const [idChar, nameChar, rankChar, energy, trace] = useCharStore(
+    useShallow((state) => [state.id, state.name, state.rank, state.energy, state.trace])
   );
   const [idLc, levelLc, rankLc, promotionLc] = useLightconeStore(
     useShallow((state) => [state.id, state.level, state.rank, state.promotion])
@@ -59,7 +59,7 @@ export default function Home() {
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             "relics": {`[`}<br />
                   <RelicCoder />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             {`],`}<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             "use_technique": true<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;             "use_technique": {trace ? "true" : "false"}<br />
                   <span style={{ userSelect: "none", fontSize: "1.5rem" }}>{`}`}<br /></span>
                 </div>
               </>
