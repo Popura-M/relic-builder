@@ -44,62 +44,62 @@ const subStats = [
   {
     id: 1,
     name: "HP",
-    base: 42.33751,
+    base: 38.103755,
   },
   {
     id: 2,
     name: "ATK",
-    base: 21.168754,
+    base: 19.051877,
   },
   {
     id: 3,
     name: "DEF",
-    base: 21.168754,
+    base: 19.051877,
   },
   {
     id: 4,
     name: "HP%",
-    base: 4.32,
+    base: 3.888,
   },
   {
     id: 5,
     name: "ATK%",
-    base: 4.32,
+    base: 3.888,
   },
   {
     id: 6,
     name: "DEF%",
-    base: 5.4,
+    base: 4.86,
   },
   {
     id: 7,
     name: "Speed",
-    base: 2.6,
+    base: 2.3,
   },
   {
     id: 8,
     name: "Crit Rate",
-    base: 3.24,
+    base: 2.916,
   },
   {
     id: 9,
     name: "Crit DMG",
-    base: 6.48,
+    base: 5.832,
   },
   {
     id: 10,
     name: "Effect HIT Rate",
-    base: 4.32,
+    base: 3.888,
   },
   {
     id: 11,
     name: "Effect RES",
-    base: 4.32,
+    base: 3.888,
   },
   {
     id: 12,
     name: "Break Effect",
-    base: 6.48,
+    base: 5.832,
   },
 ];
 

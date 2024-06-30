@@ -62,9 +62,9 @@ export default function SubStat({ index, sub, mainStat, setSubStat, increaseSubS
       </div>
       <div className="flex items-center gap-3">
         <p>Roll: </p>
-        <Select disabled defaultValue={2} onValueChange={(val) => setRoll(index, val)}>
+        <Select disabled defaultValue={1} onValueChange={(val) => setRoll(index, val)}>
           <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="High" />
+            <SelectValue placeholder="Mid" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value={0}>Low</SelectItem>
